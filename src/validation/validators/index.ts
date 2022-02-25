@@ -1,1 +1,2 @@
-export * from './required-rield-validation'
+export * from './required-field-validation'
+export * from './invalid-field-validator-length'

@@ -1,5 +1,5 @@
-import { FC, InputHTMLAttributes } from 'react';
-import { Container } from './styled';
+import { FC, InputHTMLAttributes } from 'react'
+import { Container } from './styled'
 
 interface IInput extends InputHTMLAttributes<HTMLInputElement> { }
 

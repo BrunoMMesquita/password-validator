@@ -1,4 +1,4 @@
-import { Input } from "@/Presentation/components/input"
+import { Input, Button } from "@/Presentation/components"
 import { Container } from "./styled"
 
 export function ValidationPage(): React.ReactElement {
@@ -6,6 +6,7 @@ export function ValidationPage(): React.ReactElement {
     <Container>
       <h1>Valide sua senha</h1>
       <Input placeholder="E-mail" />
+      <Button text="Enviar" onClick={() => alert('sa')} />
     </Container>
   )
 }

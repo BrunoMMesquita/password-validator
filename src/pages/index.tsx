@@ -1,7 +1,5 @@
-export default function Home() {
-  return (
-    <div>
-      <h1>Olá Devas!</h1>
-    </div>
-  )
+import { ValidationPage } from "@/Presentation/pages/validation";
+
+export default function Validation (props): React.ReactElement {
+  return <ValidationPage />
 }

@@ -7,7 +7,7 @@ export const Default: DefaultTheme = {
     colors: {
       background: darkGray,
       text: white,
-      button: green
+      primary: green
     },
 
 };

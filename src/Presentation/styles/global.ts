@@ -23,12 +23,16 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${props => props.theme.colors.background}
+    background: ${props => props.theme.colors.background};
   }
 
   h1,
   input,
   button {
-    font-family: 'Roboto', sans-serif
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h1 {
+    color: ${props => props.theme.colors.text};
   }
 `

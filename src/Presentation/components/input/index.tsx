@@ -1,9 +1,12 @@
 import { FC, InputHTMLAttributes } from 'react';
+import { Container } from './styled';
 
-interface IInput extends InputHTMLAttributes<HTMLInputElement> {}
+interface IInput extends InputHTMLAttributes<HTMLInputElement> { }
 
-export const Input:FC<IInput> = (props: IInput) => {
+export const Input: FC<IInput> = (props: IInput) => {
   return (
-    <input {...props} />
+    <Container>
+      <input {...props} />
+    </Container>
   )
 }

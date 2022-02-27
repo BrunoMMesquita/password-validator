@@ -8,6 +8,7 @@ declare module 'styled-components' {
             background: string;
             text: string;
             primary: string;
+            error: string;
         },
     }
 }

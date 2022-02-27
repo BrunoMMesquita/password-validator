@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'styled-components'
-import { white, darkGray, green } from '../colors'
+import { white, darkGray, green, red } from '../colors'
 
 export const Default: DefaultTheme = {
     title: 'default',
@@ -7,7 +7,8 @@ export const Default: DefaultTheme = {
     colors: {
       background: darkGray,
       text: white,
-      primary: green
+      primary: green,
+      error: red
     },
 
 };

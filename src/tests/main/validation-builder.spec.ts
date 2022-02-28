@@ -20,7 +20,7 @@ describe('ValidationBuilder', () => {
     expect(validations).toEqual([new EmailValidation(field)])
   })
 
-  test('Should return MinLengthValidation', () => {
+  test('Should return MinAndMaxLengthValidation', () => {
     const field = faker.database.column()
     const length = faker.datatype.number()
 

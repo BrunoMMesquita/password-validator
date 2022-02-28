@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
 
-  > div {
+  form {
     margin-top: 4rem;
     width: 50%;
     display: flex;
@@ -31,13 +31,14 @@ export const WrapperInputs = styled.div`
   }
 `;
 
-export const MessageError = styled.div`
-  span, p {
+export const MessageError = styled.ul`
+  span, li {
     color: ${props => props.theme.colors.error};
   }
 
-  p {
-    margin-left: 2rem;
+  li {
+    margin-left: 2.5rem;
+    padding: 0.3rem;
   }
 `
 

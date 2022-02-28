@@ -1,10 +1,8 @@
 import React from 'react';
-import { Container } from './styled'
+import { BaseSpiner, Container } from './styled'
 
-export const Spiner: React.FC = () => {
-    return (
-        <Container>
-            <div />
-        </Container>
-    );
-}
+export const Spiner: React.FC = () => (
+  <Container>
+    <BaseSpiner />
+  </Container>
+)

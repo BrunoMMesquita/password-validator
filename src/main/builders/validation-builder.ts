@@ -11,8 +11,8 @@ export class ValidationBuilder {
     return new ValidationBuilder(fieldName, [])
   }
 
-  required (): ValidationBuilder {
-    this.validations.push(new RequiredFieldValidation(this.fieldName))
+  required (exhibitionName?: string): ValidationBuilder {
+    this.validations.push(new RequiredFieldValidation(this.fieldName, exhibitionName))
     return this
   }
 

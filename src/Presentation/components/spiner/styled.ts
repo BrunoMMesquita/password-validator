@@ -15,11 +15,11 @@ export const Container = styled.div`
     background: #000;
 
     > div {
-      border: 16px solid ${green}; /* Light grey */
-      border-top: 16px solid ${darkGray}; /* Blue */
+      border: 0.5rem solid ${green} ; /* Light grey */
+      border-top: 0.5rem solid ${darkGray}; /* Blue */
       border-radius: 50%;
-      width: 70px;
-      height: 70px;
+      width: 10rem;
+      height: 10rem;
       animation: spin 2s linear infinite;
       animation-name: ${rotate};
     }

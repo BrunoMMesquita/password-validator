@@ -4,8 +4,8 @@ import faker from 'faker'
 
 const makeSut = (field: string): InvalidFieldBetweenValuesValidation => new InvalidFieldBetweenValuesValidation(field, 184759, 856920)
 
-describe('RequiredFieldValidation', () => {
-  test('Should return error if field is less than or greater than 6', () => {
+describe('InvalidFieldBetweenValuesValidation', () => {
+  test('Should return error if field is not in between two numbers', () => {
     const field = faker.database.column()
     const sut = makeSut(field)
 

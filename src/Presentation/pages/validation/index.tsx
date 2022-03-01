@@ -47,6 +47,13 @@ export function ValidationPage(): React.ReactElement {
     alert('abjas')
   }
 
+  const changeValue = (e, isNumber = false): void => {
+    setFormErrors([])
+    const value = isNumber ? onlyNumber(e.target.value) : e.target.value
+
+    setAuth({ ...auth, [e.target.name]: value })
+  }
+
   if (isLoading)
     return <Spiner />
 
@@ -58,16 +65,19 @@ export function ValidationPage(): React.ReactElement {
           <Input
             placeholder='Nome'
             value={auth.name}
-            onChange={(e) => setAuth({ ...auth, name: e.target.value })} />
+            name="name"
+            onChange={(e) => changeValue(e)} />
           <Input
             placeholder='E-mail'
             value={auth.email}
-            onChange={(e) => setAuth({ ...auth, email: e.target.value })} />
+            name="email"
+            onChange={(e) => changeValue(e)} />
           <Input
             placeholder="Senha"
             type='password'
+            name="password"
             value={auth.password}
-            onChange={(e) => setAuth({ ...auth, password: onlyNumber(e.target.value) })} />
+            onChange={(e) => changeValue(e, true)} />
         </WrapperInputs>
         <MessageError>
           {

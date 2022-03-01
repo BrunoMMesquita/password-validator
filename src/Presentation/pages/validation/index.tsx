@@ -3,6 +3,7 @@ import { Authentication } from '@/domain/models'
 import { makePasswordValidation } from '@/main/validation'
 import { useState } from 'react'
 import { Container, WrapperButton, WrapperInputs, MessageError } from './styled'
+import { onlyNumber } from '@/Presentation/utils/functions'
 
 enum errorsInput {
   name = 'Nome inválido',
@@ -66,7 +67,7 @@ export function ValidationPage(): React.ReactElement {
             placeholder="Senha"
             type='password'
             value={auth.password}
-            onChange={(e) => setAuth({ ...auth, password: e.target.value })} />
+            onChange={(e) => setAuth({ ...auth, password: onlyNumber(e.target.value) })} />
         </WrapperInputs>
         <MessageError>
           {

@@ -1,7 +1,7 @@
 import { FieldValidation } from '@/validation/protocols'
 import {
   RequiredFieldValidation, EmailValidation,
-  MinAndMaxLengthValidation, InvalidFieldBetweenValuesValidation
+  MinAndMaxLengthValidation, InvalidFieldBetweenValuesValidation, InvalidFieldSequenceValidation
 } from '@/validation/validators'
 
 export class ValidationBuilder {
@@ -31,6 +31,11 @@ export class ValidationBuilder {
 
   between(value: number, valueEnd: number): ValidationBuilder {
     this.validations.push(new InvalidFieldBetweenValuesValidation(this.fieldName, value, valueEnd))
+    return this
+  }
+
+  sequence(): ValidationBuilder {
+    this.validations.push(new InvalidFieldSequenceValidation(this.fieldName))
     return this
   }
 

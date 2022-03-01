@@ -42,10 +42,16 @@ export const MessageError = styled.ul`
   }
 `
 
-export const WrapperButton = styled.div`
+export const WrapperButton = styled.div<{ success: boolean }>`
   margin-top: 4rem;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+
+  span {
+    margin-right: 2rem;
+    color: ${props => props.success ? props.theme.colors.primary : props.theme.colors.error}
+  }
 
   button {
     width: 12rem;

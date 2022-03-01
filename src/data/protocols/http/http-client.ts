@@ -12,7 +12,7 @@ export interface HttpClient<R = any> {
 export type HttpMethod = 'post' | 'get' | 'put' | 'delete'
 
 export enum HttpStatusCode {
-  ok = 200,
+  ok = 201,
   noContent = 204,
   badRequest = 400,
   unauthorized = 401,

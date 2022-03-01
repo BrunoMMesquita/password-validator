@@ -4,6 +4,7 @@ import { makePasswordValidation } from '@/main/validation'
 import { useState } from 'react'
 import { Container, WrapperButton, WrapperInputs, MessageError } from './styled'
 import { onlyNumber } from '@/Presentation/utils/functions'
+import { makeRemoteValidation } from '@/main/factories/usecases'
 
 enum errorsInput {
   name = 'Nome inválido',
@@ -11,10 +12,16 @@ enum errorsInput {
   password = 'Senha inválida'
 }
 
+type SubmitForm = {
+  success: boolean
+  message: string
+}
+
 export function ValidationPage(): React.ReactElement {
   const [auth, setAuth] = useState({} as Authentication)
   const [isLoading, setIsLoading] = useState(false)
   const [formErrors, setFormErrors] = useState([])
+  const [resultSubmit, setResultSubmit] = useState({} as SubmitForm)
 
   const formInvalid = (): boolean => {
     const fields = ['name', 'email', 'password']
@@ -30,7 +37,7 @@ export function ValidationPage(): React.ReactElement {
       }
     })
 
-    if (!!errorsField.length){
+    if (!!errorsField.length) {
       setFormErrors(errorsField)
       return true
     }
@@ -38,13 +45,27 @@ export function ValidationPage(): React.ReactElement {
     return false
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     if (formInvalid())
       return
 
-    alert('abjas')
+    setIsLoading(true)
+
+    try {
+      await makeRemoteValidation().validate(auth)
+      setResultSubmit({
+        success: true,
+        message: 'Resultado enviado com sucesso!'
+      })
+    } catch (err) {
+      setResultSubmit({
+        success: false,
+        message: err.message
+      })
+    }
+    setIsLoading(false)
   }
 
   const changeValue = (e, isNumber = false): void => {
@@ -93,7 +114,10 @@ export function ValidationPage(): React.ReactElement {
             })
           }
         </MessageError>
-        <WrapperButton>
+        <WrapperButton success={resultSubmit.success}>
+          <span>
+            {resultSubmit.message}
+          </span>
           <Button text="Enviar" type="submit" />
         </WrapperButton>
       </form>

@@ -52,7 +52,6 @@ export function ValidationPage(): React.ReactElement {
       return
 
     setIsLoading(true)
-
     try {
       await makeRemoteValidation().validate(auth)
       setResultSubmit({

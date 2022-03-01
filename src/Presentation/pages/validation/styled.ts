@@ -59,6 +59,11 @@ export const WrapperButton = styled.div<{ success: boolean }>`
 
   @media (max-width: 800px) {
     margin-top: 8rem;
+    flex-direction: column;
+
+    span {
+      margin: 1rem 0;
+    }
 
     button {
       width: 100%;

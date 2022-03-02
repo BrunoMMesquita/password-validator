@@ -20,9 +20,14 @@ export const Container = styled.div`
 
   a {
     position: absolute;
-    left: 93%;
+    right: 3%;
     top: 0.7rem;
     cursor: pointer;
     font-weight: 500;
+    color: ${props => props.theme.colors.text};
+
+    @media (max-width: 450px) {
+      right: 5%;
+    }
   }
 `

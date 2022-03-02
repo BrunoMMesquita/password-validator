@@ -20,7 +20,7 @@ export const Container = styled.div`
 
   a {
     position: absolute;
-    right: 3%;
+    right: 2%;
     top: 0.7rem;
     cursor: pointer;
     font-weight: 500;

@@ -49,14 +49,14 @@ yarn ou npm i
 **4) Executar os testes**
 
 ```
-yarn ou npm test
+yarn test ou npm test
 
 ```
 
 **5) Executar a aplicação**
 
 ```
-yarn ou npm dev
+yarn dev ou npm run dev
 
 ```
 

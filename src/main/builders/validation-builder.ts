@@ -1,6 +1,6 @@
 import { FieldValidation } from '@/validation/protocols'
 import {
-  RequiredFieldValidation, EmailValidation,
+  RequiredFieldValidation, EmailValidation, InvalidFieldCheckEqualValidation,
   MinAndMaxLengthValidation, InvalidFieldBetweenValuesValidation, InvalidFieldSequenceValidation
 } from '@/validation/validators'
 
@@ -36,6 +36,11 @@ export class ValidationBuilder {
 
   sequence(): ValidationBuilder {
     this.validations.push(new InvalidFieldSequenceValidation(this.fieldName))
+    return this
+  }
+
+  equal(): ValidationBuilder {
+    this.validations.push(new InvalidFieldCheckEqualValidation(this.fieldName))
     return this
   }
 

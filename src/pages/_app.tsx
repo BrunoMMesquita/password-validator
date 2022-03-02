@@ -1,7 +1,7 @@
-import { GlobalStyle } from '@/Presentation/styles/global'
+import { GlobalStyle } from '@/presentation/styles/global'
 import '../styles/globals.css'
 import { ThemeProvider } from 'styled-components'
-import { Default } from '@/Presentation/styles/themes'
+import { Default } from '@/presentation/styles/themes'
 
 function MyApp({ Component, pageProps }) {
   return (

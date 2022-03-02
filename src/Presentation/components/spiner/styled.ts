@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { darkGray, green } from '@/Presentation/styles/colors';
+import { darkGray, green } from '@/presentation/styles/colors';
 
 const rotate = keyframes`
     from { transform: rotate(0deg); }

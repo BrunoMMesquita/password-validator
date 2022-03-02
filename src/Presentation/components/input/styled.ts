@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  position: relative;
+
   input {
     width: 100%;
     color: ${props => props.theme.colors.text};
@@ -14,5 +16,13 @@ export const Container = styled.div`
       border-bottom: 2px ${props => props.theme.colors.primary} solid;
       outline: none;
     }
+  }
+
+  a {
+    position: absolute;
+    left: 93%;
+    top: 0.7rem;
+    cursor: pointer;
+    font-weight: 500;
   }
 `

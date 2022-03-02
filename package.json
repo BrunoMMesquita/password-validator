@@ -2,6 +2,8 @@
   "name": "password-validator",
   "version": "0.1.0",
   "private": true,
+  "repository": "https://github.com/BrunoMMesquita/password-validator",
+  "author": "Bruno Mesquita <bruno.mesquita037@gmail.com>",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

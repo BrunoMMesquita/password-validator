@@ -12,5 +12,10 @@ module.exports = {
     '@/(.*)': '<rootDir>/src/$1',
     '\\.(scss|css|sass)$': 'identity-obj-proxy'
   },
-  testPathIgnorePatterns: ['/node_modules', '/.next']
+  testPathIgnorePatterns: ['/node_modules', '/.next'],
+  globals: {
+    'ts-jest': {
+      tsConfig: 'tsconfig.test.json'
+    }
+  }
 }

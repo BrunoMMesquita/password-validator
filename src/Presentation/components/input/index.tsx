@@ -11,11 +11,15 @@ export const Input: FC<IInput> = (props: IInput) => {
         type={props.type === 'password' ?
           toggle ? 'text' : 'password' : 'text'}
         readOnly
+        data-testid={props.name}
         onFocus={e => { e.target.readOnly = false }} />
       {
         props.type === 'password' &&
         <>
-          <a onClick={() => setToggle(!toggle)}>{toggle ? 'Ocultar' : 'Mostrar'}</a>
+          <a data-testid={`${props.name}-anchor`}
+            onClick={() => setToggle(!toggle)}>
+            {toggle ? 'Ocultar' : 'Mostrar'}
+          </a>
         </>
       }
     </Container>

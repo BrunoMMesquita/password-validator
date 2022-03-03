@@ -2,12 +2,12 @@ import { FC, ButtonHTMLAttributes } from 'react'
 import { ButtonOta } from './styled'
 
 interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  text: string
+  text?: string
 }
 
 export const Button: FC<IButton> = (props: IButton) => {
   return (
-    <ButtonOta {...props}>
+    <ButtonOta data-testid={props.name} {...props}>
       {props.text}
     </ButtonOta>
   )
